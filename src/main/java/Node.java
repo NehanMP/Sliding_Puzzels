@@ -1,69 +1,30 @@
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+public class Node {
+    private Node prevNode;
+    private final int col;
+    private final int row;
 
-public class Node extends JButton implements ActionListener {
-    Node parent;
-    int col;
-    int row;
-    int gCost;
-    int hCost;
-    int fCost;
-    boolean start;
-    boolean goal;
-    boolean solid;
-    boolean open;
-    boolean checked;
-
-    public Node(int col, int row){
+    public Node(int col, int row) {
+        this.prevNode = null;
         this.col = col;
         this.row = row;
-
-        setBackground(Color.white);
-        setForeground(Color.black);
-        addActionListener(this);
     }
 
-    public void setAsStart(){
-        setBackground(Color.blue);
-        setForeground(Color.white);
-        setText("S");
-        start = true;
+    // Getters
+    public Node getPrevNode() {
+        return prevNode;
     }
 
-    public void setAsGoal(){
-        setBackground(Color.yellow);
-        setForeground(Color.black);
-        setText("F");
-        goal = true;
+    public int getCol() {
+        return col;
     }
 
-    public void setAsSolid() {
-        setBackground(Color.black);
-        setForeground(Color.black);
-        solid = true;
+    public int getRow() {
+        return row;
     }
 
-    public void setAsOpen() {
-        open = true;
+    //Setters
+    public void setPrevNode(Node prevNode) {
+        this.prevNode = prevNode;
     }
 
-    public void setAsChecked() {
-        if(!start && !goal) {
-            setBackground(Color.orange);
-            setForeground(Color.black);
-        }
-        checked = true;
-    }
-
-    public void setAsPath() {
-        setBackground(Color.green);
-        setForeground(Color.black);
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        setBackground(Color.orange);
-    }
 }
