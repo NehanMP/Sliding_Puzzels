@@ -1,3 +1,6 @@
+// Name - Nehan Perera
+// Student ID - 20220606
+
 public class Map {
     private final char[][] puzzle;
     private final int startRow, startCol, goalRow, goalCol;

@@ -1,3 +1,6 @@
+// Name - Nehan Perera
+// Student ID - 20220606
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -8,8 +11,8 @@ public class Main {
     public static void main(String[] args) {
         try {
             // Load text file
-            Map map = readMapFromFile("example_algorithms/maze10_1.txt");
-//            Map map = ReadMap.readMapFromFile("benchmark_series/puzzle_40.txt");
+            Map map = readMapFromFile("example_algorithms/maze30_1.txt");
+//            Map map = readMapFromFile("benchmark_series/puzzle_10.txt");
 
             // Print the grid
             printGrid(map.getPuzzle());
@@ -23,6 +26,25 @@ public class Main {
                     System.out.println(step + ". " + stepDescription);
                     step++;
                 }
+
+                System.out.println();
+                long startTime = System.nanoTime();
+                // Code block to measure
+                long endTime = System.nanoTime();
+                long duration = (endTime - startTime); // Duration in nanoseconds
+                System.out.println("Execution time: " + duration + " nanoseconds");
+
+
+                Runtime runtime = Runtime.getRuntime();
+                runtime.gc(); // Run garbage collection to clear residual memory
+                long memoryBefore = runtime.totalMemory() - runtime.freeMemory();
+
+                // Code block to measure
+                long memoryAfter = runtime.totalMemory() - runtime.freeMemory();
+                long memoryUsed = memoryAfter - memoryBefore;
+                System.out.println("Memory used: " + memoryUsed + " bytes");
+
+
             } else {
                 System.out.println("\nNo path found.");
             }
