@@ -1,9 +1,6 @@
 public class Map {
     private final char[][] puzzle;
-    private final int startRow;
-    private final int startCol;
-    private final int goalRow;
-    private final int goalCol;
+    private final int startRow, startCol, goalRow, goalCol;
 
     public Map(char[][] puzzle, int startRow, int startCol, int goalRow, int goalCol) {
         this.puzzle = puzzle;
@@ -13,7 +10,7 @@ public class Map {
         this.goalCol = goalCol;
     }
 
-    public char[][] getGrid() {
+    public char[][] getPuzzle() {
         return puzzle;
     }
 
