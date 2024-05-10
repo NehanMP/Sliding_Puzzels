@@ -3,6 +3,8 @@ This project is used to solve a type of puzzle in path finding. The player start
 
 ![Screenshot (391)](https://github.com/NehanMP/Sliding_Puzzels/assets/148346345/441d9fc4-e2c0-465d-88ed-1526183781a5)
 
+Finally, it outputs all the steps of the path from "S" to "F". Sample benchmark puzzles are given in the folder.
+
 ## Author
 <li>Nehan Perera</li>
 
